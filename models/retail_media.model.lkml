@@ -25,8 +25,8 @@ explore: kpi_s_date_hour {}
 explore: roas_report {}
 
 explore: onsite_reports {
-  #access_filter: {
-  #  field:provider
-  #  user_attribute: advertiser
-  #  }
+  access_filter: {
+    field:provider
+    user_attribute: advertiser
+    }
 }
