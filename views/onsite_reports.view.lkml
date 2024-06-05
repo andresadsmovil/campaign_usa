@@ -63,6 +63,7 @@ view: onsite_reports {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.endDate ;;
+    html: <H4 style="background-color: #0C3B6F; font-size: 20px; text-align: center;">{{value}}</H4>;;
   }
   dimension: image_url {
     type: string
@@ -103,6 +104,7 @@ view: onsite_reports {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.startDate ;;
+    html: <H4 style="background-color: #0C3B6F; font-size: 20px; text-align: center;">{{value}}</H4>;;
   }
   dimension: target_roas {
     type: number
