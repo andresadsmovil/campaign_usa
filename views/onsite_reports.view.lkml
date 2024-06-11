@@ -118,11 +118,13 @@ view: onsite_reports {
     group_label: "Measures"
     type: sum
     sql: ${ads_spend} ;;
+    value_format: "$#,##0"
   }
   measure: max_budget_amount {
     group_label: "Measures"
     type: max
     sql: ${budget_amount} ;;
+    value_format: "$#,##0"
   }
   measure: sum_impressions_total {
     group_label: "Measures"
@@ -133,6 +135,7 @@ view: onsite_reports {
     group_label: "Measures"
     type: sum
     sql: ${purchases_amount} ;;
+    value_format: "$#,##0"
   }
   measure: sum_purchases_quantity {
     group_label: "Measures"
