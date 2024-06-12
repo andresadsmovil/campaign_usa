@@ -17,6 +17,10 @@ view: onsite_reports {
     type: number
     sql: ${TABLE}.budgetAmount ;;
   }
+  dimension: retailer {
+    type: string
+    sql: ${TABLE}.retailer ;;
+  }
   dimension: campaign_id {
     type: string
     sql: ${TABLE}.campaignId ;;
