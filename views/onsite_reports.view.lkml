@@ -53,6 +53,10 @@ view: onsite_reports {
     type: number
     sql: ${TABLE}.adSpend ;;
   }
+  dimension: advertiser_internal_id {
+    type: number
+    sql: ${TABLE}.advertiser_internal_id ;;
+  }
   dimension: adsspend_estimation {
     type: number
     sql: ${TABLE}.adsspend_estimation ;;
