@@ -53,6 +53,10 @@ view: onsite_reports {
     type: number
     sql: ${TABLE}.adSpend ;;
   }
+  dimension: CID {
+    type: string
+    sql: ${TABLE}.CID ;;
+  }
   dimension: advertiser_internal_id {
     type: string
     sql: ${TABLE}.advertiser_internal_id ;;
@@ -181,7 +185,7 @@ view: onsite_reports {
   }
   measure: max_budget_amount {
     group_label: "Measures"
-    type: max
+    type: sum
     sql: ${budget_amount} ;;
     value_format: "$#,##0"
   }
