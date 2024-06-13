@@ -11,6 +11,18 @@ view: onsite_reports {
       label: "roas"
       value: "sum_roas"
     }
+    allowed_value: {
+      label: "ventas"
+      value: "sum_purchases_amount"
+    }
+    allowed_value: {
+      label: "clics"
+      value: "sum_click"
+    }
+    allowed_value: {
+      label: "gastos"
+      value: "sum_ads_spend"
+    }
   }
 
   parameter: selected_metric_2 {
@@ -22,6 +34,18 @@ view: onsite_reports {
     allowed_value: {
       label: "roas"
       value: "sum_roas"
+    }
+    allowed_value: {
+      label: "ventas"
+      value: "sum_purchases_amount"
+    }
+    allowed_value: {
+      label: "clics"
+      value: "sum_click"
+    }
+    allowed_value: {
+      label: "gastos"
+      value: "sum_ads_spend"
     }
   }
 
@@ -192,8 +216,14 @@ view: onsite_reports {
     type: number
     sql: {% if selected_metric._parameter_value == 'sum_impressions_total' %}
           ${sum_impressions_total}
-          {% elsif selected_metric._parameter_value == 'sum_roas' %}
+        {% elsif selected_metric._parameter_value == 'sum_roas' %}
           ${sum_roas}
+        {% elsif selected_metric._parameter_value == 'sum_click' %}
+          ${sum_click}
+        {% elsif selected_metric._parameter_value == 'sum_purchases_amount' %}
+          ${sum_purchases_amount}
+        {% elsif selected_metric._parameter_value == 'sum_ads_spend' %}
+          ${sum_ads_spend}
           {% endif %};;
     label_from_parameter: selected_metric
   }
@@ -202,9 +232,15 @@ view: onsite_reports {
     type: number
     sql: {% if selected_metric_2._parameter_value == 'sum_impressions_total' %}
           ${sum_impressions_total}
-          {% elsif selected_metric_2._parameter_value == 'sum_roas' %}
+        {% elsif selected_metric_2._parameter_value == 'sum_roas' %}
           ${sum_roas}
+        {% elsif selected_metric_2._parameter_value == 'sum_click' %}
+          ${sum_click}
+        {% elsif selected_metric_2._parameter_value == 'sum_purchases_amount' %}
+          ${sum_purchases_amount}
+        {% elsif selected_metric_2._parameter_value == 'sum_ads_spend' %}
+          ${sum_ads_spend}
           {% endif %};;
     label_from_parameter: selected_metric_2
-  }
+    }
 }
