@@ -1,6 +1,30 @@
 view: onsite_reports {
   sql_table_name: `adsmovil-farmatodo.sources.onsite_reports` ;;
 
+  parameter: selected_metric {
+    type: unquoted
+    allowed_value: {
+      label: "impressions"
+      value: "sum_impressions_total"
+    }
+    allowed_value: {
+      label: "roas"
+      value: "sum_roas"
+    }
+  }
+
+  parameter: selected_metric_2 {
+    type: unquoted
+    allowed_value: {
+      label: "impressions"
+      value: "sum_impressions_total"
+    }
+    allowed_value: {
+      label: "roas"
+      value: "sum_roas"
+    }
+  }
+
   dimension: ads_spend {
     type: number
     sql: ${TABLE}.adSpend ;;
@@ -28,7 +52,7 @@ view: onsite_reports {
   dimension: campaign_name {
     type: string
     sql: ${TABLE}.campaignName ;;
-    html: <H4 style= <div style="background: #1F2653; font-size: 20px; text-align: center;">{{value}}</H4>;;
+ ##   html: <H4 style= <div style="background: #1F2653; font-size: 20px; text-align: center;">{{value}}</H4>;;
   }
   dimension: charge_type {
     type: string
@@ -67,7 +91,7 @@ view: onsite_reports {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.endDate ;;
-    html: <H3 style=" front-size: 20px; text-align: center;">{{value}}</H3>;;
+   ##  html: <H3 style=" front-size: 20px; text-align: center;">{{value}}</H3>;;
   }
   dimension: image_url {
     type: string
@@ -108,7 +132,7 @@ view: onsite_reports {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.startDate ;;
-    html: <H3 style=" front-size: 20px; text-align: center;">{{value}}</H3>;;
+   ##  html: <H3 style=" front-size: 20px; text-align: center;">{{value}}</H3>;;
   }
   dimension: target_roas {
     type: number
@@ -118,6 +142,9 @@ view: onsite_reports {
     type: string
     sql: ${TABLE}.vendorId ;;
   }
+
+
+
   measure: sum_ads_spend {
     group_label: "Measures"
     type: sum
@@ -159,5 +186,25 @@ view: onsite_reports {
   measure: count {
     type: count
     drill_fields: [product_name, campaign_name]
+  }
+
+  measure: dynamic_metric {
+    type: number
+    sql: {% if selected_metric._parameter_value == 'sum_impressions_total' %}
+          ${sum_impressions_total}
+          {% elsif selected_metric._parameter_value == 'sum_roas' %}
+          ${sum_roas}
+          {% endif %};;
+    label_from_parameter: selected_metric
+  }
+
+  measure: dynamic_metric_2 {
+    type: number
+    sql: {% if selected_metric_2._parameter_value == 'sum_impressions_total' %}
+          ${sum_impressions_total}
+          {% elsif selected_metric_2._parameter_value == 'sum_roas' %}
+          ${sum_roas}
+          {% endif %};;
+    label_from_parameter: selected_metric_2
   }
 }
