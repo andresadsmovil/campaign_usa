@@ -13,6 +13,13 @@ view: validation_alerts_last_date {
     type: number
     sql: ${TABLE}.flag_Block ;;
   }
+  dimension_group: date {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.date ;;
+  }
   dimension: flag_brand_safety {
     type: number
     sql: ${TABLE}.flag_Brand_Safety ;;
