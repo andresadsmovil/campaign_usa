@@ -6,11 +6,11 @@ view: validation_alerts_last_date {
     sql: ${TABLE}.campaign_name ;;
   }
   dimension: flag_alert {
-    type: number
+    type: string
     sql: ${TABLE}.flag_alert ;;
   }
   dimension: flag_block {
-    type: number
+    type: string
     sql: ${TABLE}.flag_Block ;;
   }
   dimension_group: date {
@@ -20,20 +20,27 @@ view: validation_alerts_last_date {
     datatype: date
     sql: ${TABLE}.date ;;
   }
+  dimension_group: min_date {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.min_date ;;
+  }
   dimension: flag_brand_safety {
-    type: number
+    type: string
     sql: ${TABLE}.flag_Brand_Safety ;;
   }
   dimension: flag_in_geo {
-    type: number
+    type: string
     sql: ${TABLE}.flag_In_Geo ;;
   }
   dimension: flag_ivt {
-    type: number
+    type: string
     sql: ${TABLE}.flag_ivt ;;
   }
   dimension: flag_viewability {
-    type: number
+    type: string
     sql: ${TABLE}.flag_viewability ;;
   }
   dimension: last_block {
@@ -136,32 +143,32 @@ view: validation_alerts_last_date {
   # Medida para contar campañas únicas con flag
   measure: validation_alerts_last_date_distinct_block_campaigns {
     type: count_distinct
-    sql: CASE WHEN ${flag_block} = 1 THEN ${campaign_name} ELSE NULL END ;;
+    sql: CASE WHEN ${flag_block} = 'Alert' THEN ${campaign_name} ELSE NULL END ;;
   }
 
   measure: validation_alerts_last_date_distinct_brand_safety_campaigns {
     type: count_distinct
-    sql: CASE WHEN ${flag_brand_safety} = 1 THEN ${campaign_name} ELSE NULL END ;;
+    sql: CASE WHEN ${flag_brand_safety} = 'Alert' THEN ${campaign_name} ELSE NULL END ;;
   }
 
   measure: validation_alerts_last_date_distinct_In_Geo_campaigns {
     type: count_distinct
-    sql: CASE WHEN ${flag_in_geo} = 1 THEN ${campaign_name} ELSE NULL END ;;
+    sql: CASE WHEN ${flag_in_geo} = 'Alert' THEN ${campaign_name} ELSE NULL END ;;
   }
 
   measure: validation_alerts_last_date_distinct_ivt_campaigns {
     type: count_distinct
-    sql: CASE WHEN ${flag_ivt} = 1 THEN ${campaign_name} ELSE NULL END ;;
+    sql: CASE WHEN ${flag_ivt} = 'Alert' THEN ${campaign_name} ELSE NULL END ;;
   }
 
   measure: validation_alerts_last_date_distinct_viewability_campaigns {
     type: count_distinct
-    sql: CASE WHEN ${flag_viewability} = 1 THEN ${campaign_name} ELSE NULL END ;;
+    sql: CASE WHEN ${flag_viewability} = 'Alert' THEN ${campaign_name} ELSE NULL END ;;
   }
 
   measure: validation_alerts_last_date_distinct_alert_campaigns {
-    type: count_distinct
-    sql: CASE WHEN ${flag_alert} = 1 THEN ${campaign_name} ELSE NULL END ;;
-  }
+   type: count_distinct
+    sql: CASE WHEN ${flag_alert} = 'Alert' THEN ${campaign_name} ELSE NULL END ;;
+   }
 
 }
