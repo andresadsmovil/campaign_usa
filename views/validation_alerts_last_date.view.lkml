@@ -9,9 +9,21 @@ view: validation_alerts_last_date {
     type: string
     sql: ${TABLE}.flag_alert ;;
   }
+  dimension: app {
+    type: string
+    sql: ${TABLE}.app ;;
+  }
   dimension: flag_block {
     type: string
     sql: ${TABLE}.flag_Block ;;
+  }
+  dimension: flag_impressions {
+    type: string
+    sql: ${TABLE}.flag_impressions ;;
+  }
+  dimension: last_impressions {
+    type: string
+    sql: ${TABLE}.last_impressions ;;
   }
   dimension_group: date {
     type: time
@@ -130,6 +142,11 @@ view: validation_alerts_last_date {
     type: sum
     value_format_name: percent_0
     sql: ${last_viewability} ;;
+  }
+  measure: sum_last_impressions {
+    group_label: "Measures"
+    type: sum
+    sql: ${last_impressions} ;;
   }
   measure: distinct_campaigns {
     type: count_distinct
