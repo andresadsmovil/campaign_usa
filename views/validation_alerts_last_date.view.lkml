@@ -5,6 +5,10 @@ view: validation_alerts_last_date {
     type: string
     sql: ${TABLE}.campaign_name ;;
   }
+  dimension: advertiser_name {
+    type: string
+    sql: ${TABLE}.advertiser_name ;;
+  }
   dimension: flag_alert {
     type: string
     sql: ${TABLE}.flag_alert ;;
