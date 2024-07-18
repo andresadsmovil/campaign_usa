@@ -104,6 +104,10 @@ view: validation_alerts {
     type: number
     sql: ${TABLE}.benchmark_Brand_Safety ;;
   }
+  dimension: impressions {
+    type: number
+    sql: ${TABLE}.total_impressions ;;
+  }
   dimension: benchmark_ivt {
     type: number
     sql: ${TABLE}.benchmark_ivt ;;
@@ -135,6 +139,11 @@ view: validation_alerts {
     type: max
     value_format_name: percent_0
     sql: ${benchmark_viewability} ;;
+  }
+  measure: sum_impressions {
+    group_label: "Measures"
+    type: sum
+    sql: ${impressions} ;;
   }
   measure: sum_benchmark_block {
     group_label: "Measures"
