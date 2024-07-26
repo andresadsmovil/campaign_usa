@@ -22,8 +22,6 @@ explore: inversion_kpi {}
 
 explore: kpi_s_date_hour {}
 
-explore: roas_report {}
-
 explore: retail_media_offside {}
 
 explore: onsite_reports {
