@@ -25,6 +25,10 @@ view: validation_alerts {
     type: number
     sql: ${TABLE}.Blocks ;;
   }
+  dimension: requests {
+    type: number
+    sql: ${TABLE}.Requests ;;
+  }
   dimension: brand_safety {
     type: number
     sql: ${TABLE}.Brand_Safety ;;
@@ -202,6 +206,12 @@ view: validation_alerts {
     group_label: "Measures"
     type: sum
     sql: ${out_of_geo_incidents} ;;
+  }
+  measure: sum_requests {
+    group_label: "Measures"
+    type: average
+    value_format_name: percent_0
+    sql: ${requests} ;;
   }
   measure: sum_blocks {
     group_label: "Measures"
