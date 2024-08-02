@@ -279,9 +279,9 @@ view: validation_alerts {
     type: sum
     sql: ${invalid_traffic} ;;
   }
-  measure: sum_invalid_traffick {
+  measure: sum_failed_ads {
     group_label: "Measures"
     type: sum
-    sql: ${invalid_traffic} ;;
+    sql: ${failed_ads} ;;
   }
 }
