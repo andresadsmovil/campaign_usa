@@ -9,6 +9,10 @@ view: validation_alerts {
     type: string
     sql: ${TABLE}.app ;;
   }
+  dimension: ias_placement_id {
+    type: string
+    sql: ${TABLE}.IAS_Placement_Id ;;
+  }
   dimension: app_bundle {
     type: string
     sql: ${TABLE}.App_Bundle ;;
@@ -20,6 +24,14 @@ view: validation_alerts {
   dimension: block {
     type: number
     sql: ${TABLE}.Block ;;
+  }
+  dimension: invalid_traffic {
+    type: number
+    sql: ${TABLE}.Invalid_Traffic ;;
+  }
+  dimension: failed_ads {
+    type: number
+    sql: ${TABLE}.Failed_Ads ;;
   }
   dimension: blocks {
     type: number
@@ -209,8 +221,7 @@ view: validation_alerts {
   }
   measure: sum_requests {
     group_label: "Measures"
-    type: average
-    value_format_name: percent_0
+    type: sum
     sql: ${requests} ;;
   }
   measure: sum_blocks {
@@ -262,5 +273,15 @@ view: validation_alerts {
     type: average
     value_format_name: percent_0
     sql: ${block} ;;
+  }
+  measure: sum_invalid_traffic {
+    group_label: "Measures"
+    type: sum
+    sql: ${invalid_traffic} ;;
+  }
+  measure: sum_invalid_traffick {
+    group_label: "Measures"
+    type: sum
+    sql: ${invalid_traffic} ;;
   }
 }
