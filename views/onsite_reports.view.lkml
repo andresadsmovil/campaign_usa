@@ -7,6 +7,7 @@ view: onsite_reports {
       label: "impressions"
       value: "sum_impressions_total"
     }
+
     allowed_value: {
       label: "roas"
       value: "sum_roas"
