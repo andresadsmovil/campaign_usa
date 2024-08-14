@@ -354,7 +354,7 @@ view: implementation_platforms {
     type: sum
     sql: ${video_complete_simplifi} ;;
   }
-  measure: sumvideo_first_quartile_ad_manager {
+  measure: sum_video_first_quartile_ad_manager {
     group_label: "Measures"
     type: sum
     sql: ${video_first_quartile_ad_manager} ;;
@@ -373,5 +373,40 @@ view: implementation_platforms {
     group_label: "Measures"
     type: sum
     sql: ${video_first_quartile_simplifi} ;;
+  }
+  measure: sum_video_third_quartile_ad_manager {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_third_quartile_ad_manager} ;;
+  }
+  measure: sum_video_third_quartile_dv360 {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_third_quartile_dv360} ;;
+  }
+  measure: sum_video_third_quartile_lqdm {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_third_quartile_lqdm} ;;
+  }
+  measure: sum_video_third_quartile_simplifi {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_third_quartile_simplifi} ;;
+  }
+  measure: sum_video_start_ad_manager {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_start_ad_manager} ;;
+  }
+  measure: sum_video_start_dv360 {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_start_dv360} ;;
+  }
+  measure: sum_video_start_simplifi {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_start_simplifi} ;;
   }
 }
