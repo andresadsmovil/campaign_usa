@@ -9,6 +9,7 @@ view: validation_alerts {
     type: string
     sql: ${TABLE}.app ;;
   }
+
   dimension: ias_placement_id {
     type: string
     sql: ${TABLE}.IAS_Placement_Id ;;
