@@ -195,6 +195,10 @@ view: implementation_platforms {
     type: number
     sql: ${TABLE}.video_start_dv360 ;;
   }
+  dimension: video_start_lqdm {
+    type: number
+    sql: ${TABLE}.video_start_lqdm ;;
+  }
   dimension: video_start_simplifi {
     type: number
     sql: ${TABLE}.video_start_simplifi ;;
@@ -408,5 +412,10 @@ view: implementation_platforms {
     group_label: "Measures"
     type: sum
     sql: ${video_start_simplifi} ;;
+  }
+  measure: sum_video_start_lqdm {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_start_lqdm} ;;
   }
 }
