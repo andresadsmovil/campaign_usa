@@ -84,9 +84,9 @@ view: implementation_platforms {
     type: string
     sql: ${TABLE}.Sale_Model ;;
   }
-  dimension: si_vas_a_implementar_en_bw {
+  dimension: Campaign_Name {
     type: string
-    sql: ${TABLE}.Si_vas_a_implementar_en_BW ;;
+    sql: ${TABLE}.Campaign_Name ;;
   }
   dimension_group: start {
     type: time
