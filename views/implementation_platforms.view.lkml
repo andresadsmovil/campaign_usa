@@ -25,6 +25,14 @@ view: implementation_platforms {
     type: string
     sql: ${TABLE}.CID ;;
   }
+  dimension: product {
+    type: string
+    sql: ${TABLE}.product ;;
+  }
+  dimension: Product_Name {
+    type: string
+    sql: ${TABLE}.Product__Product_Name ;;
+  }
   dimension: clicks_ad_manager {
     type: number
     sql: ${TABLE}.clicks_ad_manager ;;
@@ -218,6 +226,54 @@ view: implementation_platforms {
   dimension: video_third_quartile_simplifi {
     type: number
     sql: ${TABLE}.video_third_quartile_simplifi ;;
+  }
+  dimension: impressions_bw {
+    type: number
+    sql: ${TABLE}.impressions_bw ;;
+  }
+  dimension: clicks_bw {
+    type: number
+    sql: ${TABLE}.clicks_bw ;;
+  }
+  dimension: video_plays_bw {
+    type: number
+    sql: ${TABLE}.video_plays_bw ;;
+  }
+  dimension: video_q1s_bw {
+    type: number
+    sql: ${TABLE}.video_q1s_bw ;;
+  }
+  dimension: video_midpoints_bw {
+    type: number
+    sql: ${TABLE}.video_midpoints_bw ;;
+  }
+  dimension: video_q3s_bw {
+    type: number
+    sql: ${TABLE}.video_q3s_bw ;;
+  }
+  dimension: video_completes_bw {
+    type: number
+    sql: ${TABLE}.video_completes_bw ;;
+  }
+  dimension: total_active_view_measurable_impressions_bw {
+    type: number
+    sql: ${TABLE}.total_active_view_measurable_impressions_bw ;;
+  }
+  dimension: total_active_view_viewable_impressions_bw {
+    type: number
+    sql: ${TABLE}.total_active_view_viewable_impressions_bw ;;
+  }
+  dimension: total_active_view_viewable_impressions_rate_bw {
+    type: number
+    sql: ${TABLE}.total_active_view_viewable_impressions_rate_bw ;;
+  }
+  dimension: average_CPM_bw {
+    type: number
+    sql: ${TABLE}.average_CPM_bw ;;
+  }
+  dimension: spend_bw {
+    type: number
+    sql: ${TABLE}.spend_bw ;;
   }
   measure: count {
     type: count
@@ -417,5 +473,65 @@ view: implementation_platforms {
     group_label: "Measures"
     type: sum
     sql: ${video_start_lqdm} ;;
+  }
+  measure: sum_impressions_bw {
+    group_label: "Measures"
+    type: sum
+    sql: ${impressions_bw} ;;
+  }
+  measure: sum_clicks_bw {
+    group_label: "Measures"
+    type: sum
+    sql: ${clicks_bw} ;;
+  }
+  measure: sum_video_plays_bw {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_plays_bw} ;;
+  }
+  measure: sum_video_q1s_bw {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_q1s_bw} ;;
+  }
+  measure: sum_video_midpoints_bw {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_midpoints_bw} ;;
+  }
+  measure: sum_video_q3s_bw {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_q3s_bw} ;;
+  }
+  measure: sum_video_completes_bw {
+    group_label: "Measures"
+    type: sum
+    sql: ${video_completes_bw} ;;
+  }
+  measure: sum_total_active_view_measurable_impressions_bw {
+    group_label: "Measures"
+    type: sum
+    sql: ${total_active_view_measurable_impressions_bw} ;;
+  }
+  measure: sum_total_active_view_viewable_impressions_bw {
+    group_label: "Measures"
+    type: sum
+    sql: ${total_active_view_viewable_impressions_bw} ;;
+  }
+  measure: sum_total_active_view_viewable_impressions_rate_bw {
+    group_label: "Measures"
+    type: sum
+    sql: ${total_active_view_viewable_impressions_rate_bw} ;;
+  }
+  measure: sum_spend_bw {
+    group_label: "Measures"
+    type: sum
+    sql: ${spend_bw} ;;
+  }
+  measure: sum_average_CPM_bw {
+    group_label: "Measures"
+    type: sum
+    sql: ${average_CPM_bw} ;;
   }
 }
