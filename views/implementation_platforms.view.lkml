@@ -5,6 +5,10 @@ view: implementation_platforms {
     type: string
     sql: ${TABLE}.Agency__Agency_Name ;;
   }
+  dimension: creative_size {
+    type: string
+    sql: ${TABLE}.creative_size ;;
+  }
   dimension: average_cpm_ad_manager {
     type: number
     sql: ${TABLE}.average_CPM_ad_manager ;;
@@ -281,23 +285,27 @@ view: implementation_platforms {
   }
   measure: sum_average_cpm_ad_manager {
     group_label: "Measures"
-    type: sum
+    type: max
     sql: ${average_cpm_ad_manager} ;;
+    value_format: "#,##0"
     }
   measure: sum_average_cpm_dv360 {
     group_label: "Measures"
-    type: sum
+    type: max
     sql: ${average_cpm_dv360} ;;
+    value_format: "#,##0"
   }
   measure: sum_average_cpm_lqdm {
     group_label: "Measures"
-    type: sum
+    type: max
     sql: ${average_cpm_lqdm} ;;
+    value_format: "#,##0"
   }
   measure: sum_average_cpm_simplifi {
     group_label: "Measures"
-    type: sum
+    type: max
     sql: ${average_cpm_simplifi} ;;
+    value_format: "#,##0"
   }
   measure: sum_clicks_ad_manager {
     group_label: "Measures"
@@ -378,21 +386,25 @@ view: implementation_platforms {
     group_label: "Measures"
     type: sum
     sql: ${total_cost_ad_manager} ;;
+    value_format: "#,##0"
   }
   measure: sum_total_cost_dv360 {
     group_label: "Measures"
     type: sum
     sql: ${total_cost_dv360} ;;
+    value_format: "#,##0"
   }
   measure: sum_total_cost_lqdm {
     group_label: "Measures"
     type: sum
     sql: ${total_cost_lqdm} ;;
+    value_format: "#,##0"
   }
   measure: sum_total_cost_simplifi {
     group_label: "Measures"
     type: sum
     sql: ${total_cost_simplifi} ;;
+    value_format: "#,##0"
   }
   measure: sum_video_complete_ad_manager {
     group_label: "Measures"
@@ -528,10 +540,12 @@ view: implementation_platforms {
     group_label: "Measures"
     type: sum
     sql: ${spend_bw} ;;
+    value_format: "#,##0"
   }
   measure: sum_average_CPM_bw {
     group_label: "Measures"
-    type: sum
+    type: max
     sql: ${average_CPM_bw} ;;
+    value_format: "#,##0"
   }
 }
