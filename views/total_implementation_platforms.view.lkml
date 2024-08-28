@@ -1,29 +1,25 @@
-view: implementation_platforms {
-  sql_table_name: `adsmovil-reports.looker_ml.implementation_platforms` ;;
+view: total_implementation_platforms {
+  sql_table_name: `adsmovil-reports.looker_ml.total_implementation_platforms` ;;
 
+  dimension: advertiser_id {
+    type: string
+    sql: ${TABLE}.Advertiser_id ;;
+  }
   dimension: agency__agency_name {
     type: string
     sql: ${TABLE}.Agency__Agency_Name ;;
-  }
-  dimension: creative_size {
-    type: string
-    sql: ${TABLE}.creative_size ;;
   }
   dimension: average_cpm_ad_manager {
     type: number
     sql: ${TABLE}.average_CPM_ad_manager ;;
   }
+  dimension: average_cpm_bw {
+    type: number
+    sql: ${TABLE}.average_CPM_bw ;;
+  }
   dimension: average_cpm_dv360 {
     type: number
     sql: ${TABLE}.average_CPM_dv360 ;;
-  }
-  dimension: flag_cpm {
-    type: yesno
-    sql: ${TABLE}.flag_cpm ;;
-  }
-  dimension: flag_product {
-    type: yesno
-    sql: ${TABLE}.flag_product ;;
   }
   dimension: average_cpm_lqdm {
     type: number
@@ -33,21 +29,21 @@ view: implementation_platforms {
     type: number
     sql: ${TABLE}.average_CPM_simplifi ;;
   }
+  dimension: campaign_name {
+    type: string
+    sql: ${TABLE}.Campaign_Name ;;
+  }
   dimension: cid {
     type: string
     sql: ${TABLE}.CID ;;
   }
-  dimension: product {
-    type: string
-    sql: ${TABLE}.product ;;
-  }
-  dimension: Product_Name {
-    type: string
-    sql: ${TABLE}.Product__Product_Name ;;
-  }
   dimension: clicks_ad_manager {
     type: number
     sql: ${TABLE}.clicks_ad_manager ;;
+  }
+  dimension: clicks_bw {
+    type: number
+    sql: ${TABLE}.clicks_bw ;;
   }
   dimension: clicks_dv360 {
     type: number
@@ -66,12 +62,9 @@ view: implementation_platforms {
     map_layer_name: countries
     sql: ${TABLE}.country ;;
   }
-  dimension_group: date {
-    type: time
-    timeframes: [raw, date, week, month, quarter, year]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.date ;;
+  dimension: creative_size {
+    type: string
+    sql: ${TABLE}.creative_size ;;
   }
   dimension_group: end {
     type: time
@@ -80,9 +73,21 @@ view: implementation_platforms {
     datatype: date
     sql: ${TABLE}.end_date ;;
   }
+  dimension: flag_cpm {
+    type: yesno
+    sql: ${TABLE}.flag_cpm ;;
+  }
+  dimension: flag_product {
+    type: yesno
+    sql: ${TABLE}.flag_product ;;
+  }
   dimension: impressions_ad_manager {
     type: number
     sql: ${TABLE}.impressions_ad_manager ;;
+  }
+  dimension: impressions_bw {
+    type: number
+    sql: ${TABLE}.impressions_bw ;;
   }
   dimension: impressions_dv360 {
     type: number
@@ -96,17 +101,29 @@ view: implementation_platforms {
     type: number
     sql: ${TABLE}.impressions_simplifi ;;
   }
+  dimension: income {
+    type: number
+    sql: ${TABLE}.Income ;;
+  }
   dimension: n__mero_de_orden {
     type: string
     sql: ${TABLE}.N__mero_de_Orden ;;
+  }
+  dimension: product {
+    type: string
+    sql: ${TABLE}.product ;;
+  }
+  dimension: product__product_name {
+    type: string
+    sql: ${TABLE}.Product__Product_Name ;;
   }
   dimension: sale_model {
     type: string
     sql: ${TABLE}.Sale_Model ;;
   }
-  dimension: Campaign_Name {
-    type: string
-    sql: ${TABLE}.Campaign_Name ;;
+  dimension: spend_bw {
+    type: number
+    sql: ${TABLE}.spend_bw ;;
   }
   dimension_group: start {
     type: time
@@ -119,6 +136,10 @@ view: implementation_platforms {
     type: number
     sql: ${TABLE}.total_active_view_measurable_impressions_ad_manager ;;
   }
+  dimension: total_active_view_measurable_impressions_bw {
+    type: number
+    sql: ${TABLE}.total_active_view_measurable_impressions_bw ;;
+  }
   dimension: total_active_view_measurable_impressions_dv360 {
     type: number
     sql: ${TABLE}.total_active_view_measurable_impressions_dv360 ;;
@@ -127,6 +148,10 @@ view: implementation_platforms {
     type: number
     sql: ${TABLE}.total_active_view_viewable_impressions_ad_manager ;;
   }
+  dimension: total_active_view_viewable_impressions_bw {
+    type: number
+    sql: ${TABLE}.total_active_view_viewable_impressions_bw ;;
+  }
   dimension: total_active_view_viewable_impressions_dv360 {
     type: number
     sql: ${TABLE}.total_active_view_viewable_impressions_dv360 ;;
@@ -134,6 +159,10 @@ view: implementation_platforms {
   dimension: total_active_view_viewable_impressions_rate_ad_manager {
     type: number
     sql: ${TABLE}.total_active_view_viewable_impressions_rate_ad_manager ;;
+  }
+  dimension: total_active_view_viewable_impressions_rate_bw {
+    type: number
+    sql: ${TABLE}.total_active_view_viewable_impressions_rate_bw ;;
   }
   dimension: total_active_view_viewable_impressions_rate_dv360 {
     type: number
@@ -175,6 +204,10 @@ view: implementation_platforms {
     type: number
     sql: ${TABLE}.video_complete_simplifi ;;
   }
+  dimension: video_completes_bw {
+    type: number
+    sql: ${TABLE}.video_completes_bw ;;
+  }
   dimension: video_first_quartile_ad_manager {
     type: number
     sql: ${TABLE}.video_first_quartile_ad_manager ;;
@@ -206,6 +239,22 @@ view: implementation_platforms {
   dimension: video_midpoint_simplifi {
     type: number
     sql: ${TABLE}.video_midpoint_simplifi ;;
+  }
+  dimension: video_midpoints_bw {
+    type: number
+    sql: ${TABLE}.video_midpoints_bw ;;
+  }
+  dimension: video_plays_bw {
+    type: number
+    sql: ${TABLE}.video_plays_bw ;;
+  }
+  dimension: video_q1s_bw {
+    type: number
+    sql: ${TABLE}.video_q1s_bw ;;
+  }
+  dimension: video_q3s_bw {
+    type: number
+    sql: ${TABLE}.video_q3s_bw ;;
   }
   dimension: video_start_ad_manager {
     type: number
@@ -239,68 +288,16 @@ view: implementation_platforms {
     type: number
     sql: ${TABLE}.video_third_quartile_simplifi ;;
   }
-  dimension: impressions_bw {
-    type: number
-    sql: ${TABLE}.impressions_bw ;;
-  }
-  dimension: clicks_bw {
-    type: number
-    sql: ${TABLE}.clicks_bw ;;
-  }
-  dimension: income {
-    type: number
-    sql: ${TABLE}.Income ;;
-  }
-  dimension: video_plays_bw {
-    type: number
-    sql: ${TABLE}.video_plays_bw ;;
-  }
-  dimension: video_q1s_bw {
-    type: number
-    sql: ${TABLE}.video_q1s_bw ;;
-  }
-  dimension: video_midpoints_bw {
-    type: number
-    sql: ${TABLE}.video_midpoints_bw ;;
-  }
-  dimension: video_q3s_bw {
-    type: number
-    sql: ${TABLE}.video_q3s_bw ;;
-  }
-  dimension: video_completes_bw {
-    type: number
-    sql: ${TABLE}.video_completes_bw ;;
-  }
-  dimension: total_active_view_measurable_impressions_bw {
-    type: number
-    sql: ${TABLE}.total_active_view_measurable_impressions_bw ;;
-  }
-  dimension: total_active_view_viewable_impressions_bw {
-    type: number
-    sql: ${TABLE}.total_active_view_viewable_impressions_bw ;;
-  }
-  dimension: total_active_view_viewable_impressions_rate_bw {
-    type: number
-    sql: ${TABLE}.total_active_view_viewable_impressions_rate_bw ;;
-  }
-  dimension: average_CPM_bw {
-    type: number
-    sql: ${TABLE}.average_CPM_bw ;;
-  }
-  dimension: spend_bw {
-    type: number
-    sql: ${TABLE}.spend_bw ;;
-  }
   measure: count {
     type: count
-    drill_fields: [agency__agency_name]
+    drill_fields: [agency__agency_name, campaign_name, product__product_name]
   }
   measure: sum_average_cpm_ad_manager {
     group_label: "Measures"
     type: max
     sql: ${average_cpm_ad_manager} ;;
     value_format: "#,##0"
-    }
+  }
   measure: sum_average_cpm_dv360 {
     group_label: "Measures"
     type: max
@@ -563,7 +560,7 @@ view: implementation_platforms {
   measure: sum_average_CPM_bw {
     group_label: "Measures"
     type: max
-    sql: ${average_CPM_bw} ;;
+    sql: ${average_cpm_bw} ;;
     value_format: "#,##0"
   }
 }
