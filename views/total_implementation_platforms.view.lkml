@@ -288,6 +288,10 @@ view: total_implementation_platforms {
     type: number
     sql: ${TABLE}.video_third_quartile_simplifi ;;
   }
+  dimension: negotiated_price {
+    type: number
+    sql: ${TABLE}.Negotiated_Price ;;
+  }
   measure: count {
     type: count
     drill_fields: [agency__agency_name, campaign_name, product__product_name]
@@ -562,5 +566,10 @@ view: total_implementation_platforms {
     type: max
     sql: ${average_cpm_bw} ;;
     value_format: "#,##0"
+  }
+  measure: sum_negotiated_price {
+    group_label: "Measures"
+    type: sum
+    sql: ${negotiated_price} ;;
   }
 }

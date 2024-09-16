@@ -9,6 +9,11 @@ view: implementation_platforms {
     type: string
     sql: ${TABLE}.creative_size ;;
   }
+  dimension: negotiated_price {
+    type: number
+    sql: ${TABLE}.Negotiated_Price ;;
+  }
+
   dimension: average_cpm_ad_manager {
     type: number
     sql: ${TABLE}.average_CPM_ad_manager ;;
@@ -122,6 +127,10 @@ view: implementation_platforms {
   dimension: total_active_view_measurable_impressions_dv360 {
     type: number
     sql: ${TABLE}.total_active_view_measurable_impressions_dv360 ;;
+  }
+  dimension: total_sale {
+    type: number
+    sql: ${TABLE}.Total_Sale ;;
   }
   dimension: total_active_view_viewable_impressions_ad_manager {
     type: number
@@ -565,5 +574,15 @@ view: implementation_platforms {
     type: max
     sql: ${average_CPM_bw} ;;
     value_format: "#,##0"
+  }
+  measure: sum_negotiated_price {
+    group_label: "Measures"
+    type: sum
+    sql: ${negotiated_price} ;;
+  }
+  measure: sum_total_sale {
+    group_label: "Measures"
+    type: sum
+    sql: ${total_sale} ;;
   }
 }
