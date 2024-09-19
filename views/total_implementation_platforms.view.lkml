@@ -13,6 +13,10 @@ view: total_implementation_platforms {
     type: number
     sql: ${TABLE}.average_CPM_ad_manager ;;
   }
+  dimension: trafficker {
+    type: string
+    sql: ${TABLE}.Trafficker ;;
+  }
   dimension: average_cpm_bw {
     type: number
     sql: ${TABLE}.average_CPM_bw ;;

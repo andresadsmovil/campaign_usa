@@ -9,6 +9,10 @@ view: implementation_platforms {
     type: string
     sql: ${TABLE}.creative_size ;;
   }
+  dimension: trafficker {
+    type: string
+    sql: ${TABLE}.Trafficker ;;
+  }
   dimension: negotiated_price {
     type: number
     sql: ${TABLE}.Negotiated_Price ;;
