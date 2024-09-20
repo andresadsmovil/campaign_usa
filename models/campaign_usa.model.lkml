@@ -18,3 +18,5 @@ explore: validation_alerts {}
 explore: implementation_platforms {}
 
 explore: total_implementation_platforms {}
+
+explore: reports_pmps {}
