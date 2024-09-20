@@ -53,7 +53,7 @@ view: reports_pmps {
                WHEN ${number_month} = 10 THEN 'October'
                WHEN ${number_month} = 11 THEN 'November'
                WHEN ${number_month} = 12 THEN 'December'
-               ELSE
+               ELSE 'Validate'
           END;;
   }
   dimension: provider {
