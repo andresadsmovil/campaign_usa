@@ -546,6 +546,7 @@ view: implementation_platforms {
     type: sum
     sql: ${video_completes_bw} ;;
   }
+
   measure: sum_total_active_view_measurable_impressions_bw {
     group_label: "Measures"
     type: sum
