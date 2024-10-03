@@ -296,6 +296,25 @@ view: total_implementation_platforms {
     type: number
     sql: ${TABLE}.Negotiated_Price ;;
   }
+  dimension: total_cost {
+  type: number
+  sql:  ${TABLE}.spend_bw + ${TABLE}.total_cost_ad_manager + ${TABLE}.total_cost_dv360 + ${TABLE}.total_cost_simplifi + ${TABLE}.total_cost_lqdm ;;
+  }
+  dimension: margin {
+    type: number
+    sql: ${income} - ${total_cost} ;;
+  }
+  dimension: porcentage_margin {
+    type: number
+    sql: ${income}/${margin}  ;;
+  }
+  dimension: grouped_margin {
+    type: number
+    sql: CASE WHEN ${porcentage_margin} <= 0.20, "Perdida",
+          WHEN ${porcentage_margin} < 0.40, "Bajo",
+          WHEN ${porcentage_margin} < 0.60, "Medio",
+          WHEN ${porcentage_margin} >= 0.60, "Optimo" ELSE NULL END;;
+  }
   measure: count {
     type: count
     drill_fields: [agency__agency_name, campaign_name, product__product_name]

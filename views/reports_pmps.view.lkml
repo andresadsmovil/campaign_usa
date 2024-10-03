@@ -56,6 +56,13 @@ view: reports_pmps {
                ELSE 'Validate'
           END;;
   }
+  dimension_group: date {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.date ;;
+  }
   dimension: provider {
     type: string
     sql: ${TABLE}.Provider ;;
