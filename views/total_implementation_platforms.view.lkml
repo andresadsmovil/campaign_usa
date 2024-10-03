@@ -292,6 +292,18 @@ view: total_implementation_platforms {
     type: number
     sql: ${TABLE}.video_third_quartile_simplifi ;;
   }
+  dimension: flag_ctr_bw {
+    type: yesno
+    sql: ${TABLE}.flag_ctr_bw ;;
+  }
+  dimension: entrega_bw {
+    type: number
+    sql: ${TABLE}.entrega_bw ;;
+  }
+  dimension: objetive {
+    type: number
+    sql: ${TABLE}.Objetive;;
+  }
   dimension: negotiated_price {
     type: number
     sql: ${TABLE}.Negotiated_Price ;;
@@ -318,6 +330,18 @@ view: total_implementation_platforms {
   measure: count {
     type: count
     drill_fields: [agency__agency_name, campaign_name, product__product_name]
+  }
+  measure: sum_objetive {
+    group_label: "Measures"
+    type: max
+    sql: ${objetive} ;;
+    value_format: "#,##0"
+  }
+  measure: sum_entrega_bw {
+    group_label: "Measures"
+    type: max
+    sql: ${entrega_bw} ;;
+    value_format: "#,##0"
   }
   measure: sum_average_cpm_ad_manager {
     group_label: "Measures"
