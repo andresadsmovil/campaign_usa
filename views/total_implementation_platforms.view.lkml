@@ -33,6 +33,10 @@ view: total_implementation_platforms {
     type: number
     sql: ${TABLE}.average_CPM_simplifi ;;
   }
+  dimension: grouped_margin {
+    type: string
+    sql: ${TABLE}.grouped_margin ;;
+  }
   dimension: campaign_name {
     type: string
     sql: ${TABLE}.Campaign_Name ;;
@@ -308,24 +312,9 @@ view: total_implementation_platforms {
     type: number
     sql: ${TABLE}.Negotiated_Price ;;
   }
-  dimension: total_cost {
-  type: number
-  sql:  ${TABLE}.spend_bw + ${TABLE}.total_cost_ad_manager + ${TABLE}.total_cost_dv360 + ${TABLE}.total_cost_simplifi + ${TABLE}.total_cost_lqdm ;;
-  }
-  dimension: margin {
+  dimension: total_sale {
     type: number
-    sql: ${income} - ${total_cost} ;;
-  }
-  dimension: porcentage_margin {
-    type: number
-    sql: ${income}/${margin}  ;;
-  }
-  dimension: grouped_margin {
-    type: number
-    sql: CASE WHEN ${porcentage_margin} <= 0.20, "Perdida",
-          WHEN ${porcentage_margin} < 0.40, "Bajo",
-          WHEN ${porcentage_margin} < 0.60, "Medio",
-          WHEN ${porcentage_margin} >= 0.60, "Optimo" ELSE NULL END;;
+    sql: ${TABLE}.total_sale ;;
   }
   measure: count {
     type: count
@@ -335,6 +324,12 @@ view: total_implementation_platforms {
     group_label: "Measures"
     type: max
     sql: ${objetive} ;;
+    value_format: "#,##0"
+  }
+  measure: sum_total_sale {
+    group_label: "Measures"
+    type: max
+    sql: ${total_sale} ;;
     value_format: "#,##0"
   }
   measure: sum_entrega_bw {

@@ -300,9 +300,14 @@ view: implementation_platforms {
     type: number
     sql: ${TABLE}.average_CPM_bw ;;
   }
+
   dimension: spend_bw {
     type: number
     sql: ${TABLE}.spend_bw ;;
+  }
+  dimension: grouped_margin {
+    type: string
+    sql: ${TABLE}.grouped_margin ;;
   }
   measure: count {
     type: count
