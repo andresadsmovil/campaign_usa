@@ -50,7 +50,6 @@ view: onsite_reports {
     }
   }
 
-
   dimension: ads_spend {
     type: number
     sql: ${TABLE}.adSpend ;;
