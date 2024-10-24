@@ -60,7 +60,7 @@ view: onsite_reports {
   }
   dimension: advertiser_internal_id {
     type: string
-    sql: ${TABLE}.advertiser_internal_id ;;
+     sql: CAST(${TABLE}.advertiser_internal_id  AS STRING);;
   }
   dimension: adsspend_estimation {
     type: number
@@ -175,9 +175,6 @@ view: onsite_reports {
     type: string
     sql: ${TABLE}.vendorId ;;
   }
-
-
-
   measure: sum_ads_spend {
     group_label: "Measures"
     type: sum
