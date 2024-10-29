@@ -75,6 +75,13 @@ view: reports_pmps {
     type: number
     sql: ${TABLE}.Total_Cost ;;
   }
+  dimension: type_deal {
+    type: string
+    sql:
+          CASE WHEN ${country} = 'Interno' THEN 'Interno'
+               ELSE 'Externo'
+          END;;
+  }
   measure: count {
     type: count
     drill_fields: [deal_name]
