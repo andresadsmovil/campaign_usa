@@ -320,6 +320,30 @@ view: total_implementation_platforms {
     type: count
     drill_fields: [agency__agency_name, campaign_name, product__product_name]
   }
+  dimension: flag_beeswax {
+    type: string
+    sql: ${TABLE}.flag_beeswax ;;
+  }
+  dimension: flag_dv360 {
+    type: string
+    sql: ${TABLE}.flag_dv360 ;;
+  }
+  dimension: flag_ad_manager {
+    type: string
+    sql: ${TABLE}.flag_ad_manager ;;
+  }
+  dimension: flag_lqdm {
+    type: string
+    sql: ${TABLE}.flag_lqdm ;;
+  }
+  dimension: flag_simplifi {
+    type: string
+    sql: ${TABLE}.flag_simplifi ;;
+  }
+  dimension: flag_plataformas {
+    type: string
+    sql: ${TABLE}.flag_plataformas ;;
+  }
   measure: sum_objetive {
     group_label: "Measures"
     type: max
