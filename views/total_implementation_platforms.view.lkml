@@ -41,6 +41,10 @@ view: total_implementation_platforms {
     type: string
     sql: ${TABLE}.Campaign_Name ;;
   }
+  dimension: status_campaign {
+    type: string
+    sql: ${TABLE}.status_campaign ;;
+  }
   dimension: cid {
     type: string
     sql: ${TABLE}.CID ;;

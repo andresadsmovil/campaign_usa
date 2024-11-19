@@ -309,6 +309,10 @@ view: implementation_platforms {
     type: string
     sql: ${TABLE}.grouped_margin ;;
   }
+  dimension: status_campaign {
+    type: string
+    sql: ${TABLE}.status_campaign ;;
+  }
   measure: count {
     type: count
     drill_fields: [agency__agency_name]
