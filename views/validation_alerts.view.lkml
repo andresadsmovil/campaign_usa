@@ -13,6 +13,10 @@ view: validation_alerts {
     type: string
     sql: ${TABLE}.orden_id ;;
   }
+  dimension: product_join {
+    type: string
+    sql: ${TABLE}.product_join ;;
+  }
   dimension: ias_placement_id {
     type: string
     sql: ${TABLE}.IAS_Placement_Id ;;
