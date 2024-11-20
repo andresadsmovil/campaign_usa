@@ -9,6 +9,10 @@ view: validation_alerts_last_date {
     type: string
     sql: ${TABLE}.advertiser_name ;;
   }
+  dimension: orden_id {
+    type: string
+    sql: ${TABLE}.orden_id ;;
+  }
   dimension: flag_alert {
     type: string
     sql: ${TABLE}.flag_alert ;;
