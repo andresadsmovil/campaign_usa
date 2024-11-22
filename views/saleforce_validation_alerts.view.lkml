@@ -25,6 +25,10 @@ view: saleforce_validation_alerts {
     type: string
     sql: ${TABLE}.product_join ;;
   }
+  dimension: plataforma {
+    type: string
+    sql: ${TABLE}.plataforma ;;
+  }
   measure: count {
     type: count
     drill_fields: [product__product_name]
