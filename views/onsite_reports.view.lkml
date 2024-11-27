@@ -129,7 +129,7 @@ view: onsite_reports {
   dimension: image_url {
     type: string
     sql: ${TABLE}.imageurl;;
-    html: "<img src='{{ value }}' width='50' height='50'>";;
+    html: <img src='{{ value }}' width='50' height='50'>;;
   }
   dimension: impressions_total {
     type: number
