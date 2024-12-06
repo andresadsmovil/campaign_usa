@@ -10,19 +10,6 @@ datagroup: retail_media_default_datagroup {
 
 persist_with: retail_media_default_datagroup
 
-explore: campaign_events_report {}
-
-explore: auction_log_farmatodo {}
-
-explore: creative_info {}
-
-explore: kpi_s {}
-
-explore: inversion_kpi {}
-
-explore: kpi_s_date_hour {}
-
-explore: retail_media_offside {}
 
 explore: onsite_reports {
   access_filter: {
