@@ -10,7 +10,7 @@ datagroup: retail_media_default_datagroup {
 
 persist_with: retail_media_default_datagroup
 
-
+explore:  onsite_reports_banner_products {}
 explore: onsite_reports {
   access_filter: {
     field:provider
