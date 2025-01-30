@@ -21,5 +21,11 @@ explore: implementation_platforms {}
 
 explore: total_implementation_platforms {}
 
-
-explore: reports_pmps {}
+explore: reports_pmps {
+  hidden: yes
+  join: reports_pmps__cid {
+    view_label: "Reports Pmps: Cid"
+    sql: LEFT JOIN UNNEST(${reports_pmps.cid}) as reports_pmps__cid ;;
+    relationship: one_to_many
+  }
+}
