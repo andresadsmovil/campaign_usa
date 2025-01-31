@@ -14,10 +14,6 @@ view: reports_pmps {
     hidden: yes
     sql: ${TABLE}.cid ;;
   }
-  dimension: clicks {
-    type: number
-    sql: ${TABLE}.clicks ;;
-  }
   dimension: country {
     type: string
     map_layer_name: countries
@@ -31,28 +27,38 @@ view: reports_pmps {
     sql: ${TABLE}.date ;;
   }
   dimension: deal_id {
-    type: number
-    sql: ${TABLE}.dealId ;;
+    type: string
+    sql: CAST(${TABLE}.dealId AS STRING);;
   }
   dimension: deal_name {
     type: string
     sql: ${TABLE}.dealName ;;
   }
-  dimension: impressions {
-    type: number
-    sql: ${TABLE}.impressions ;;
-  }
-  dimension: media_cost {
-    type: number
-    sql: ${TABLE}.mediaCost ;;
-  }
-  dimension: spends {
-    type: number
-    sql: ${TABLE}.spends ;;
-  }
   measure: count {
     type: count
     drill_fields: [deal_name, agency__agency_name]
+  }
+  measure: media_cost {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.mediaCost ;;
+    value_format: "$#,##0"
+  }
+  measure: spends {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.spends ;;
+    value_format: "$#,##0"
+  }
+  measure: impressions {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.impressions ;;
+  }
+  measure: clicks {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.clicks ;;
   }
 }
 
