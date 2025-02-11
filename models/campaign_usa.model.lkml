@@ -29,5 +29,3 @@ explore: reports_pmps {
     relationship: one_to_many
   }
 }
-
-explore: search_retail_media {}
