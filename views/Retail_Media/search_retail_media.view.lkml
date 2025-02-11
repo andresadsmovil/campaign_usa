@@ -25,5 +25,7 @@ view: search_retail_media {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.count_search ;;
+    ##value_format: "0.000, \"K\""
+    ##html: <H4 style= <div style=" font-size: 15px; text-align: center;">{{value}}</H4>;;
   }
 }

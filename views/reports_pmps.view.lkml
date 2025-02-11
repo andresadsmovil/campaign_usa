@@ -60,6 +60,11 @@ view: reports_pmps {
     type: sum
     sql: ${TABLE}.clicks ;;
   }
+  measure: vcr {
+    group_label: "Measures"
+    type: average
+    sql: ${TABLE}.vcr ;;
+  }
 }
 
 view: reports_pmps__cid {
