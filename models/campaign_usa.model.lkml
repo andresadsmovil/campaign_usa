@@ -29,3 +29,7 @@ explore: reports_pmps {
     relationship: one_to_many
   }
 }
+
+
+explore: search_retail_media {}
+explore: final_master_table {}

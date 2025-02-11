@@ -17,6 +17,3 @@ explore: onsite_reports {
     user_attribute: advertiser
   }
 }
-
-explore: search_retail_media {}
-explore: final_master_table {}
