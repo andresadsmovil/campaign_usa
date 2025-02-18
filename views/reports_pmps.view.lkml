@@ -10,6 +10,7 @@ view: reports_pmps {
     type: string
     sql: ${TABLE}.Agency__Agency_Name ;;
   }
+
   dimension: cid {
     hidden: yes
     sql: ${TABLE}.cid ;;
@@ -18,6 +19,18 @@ view: reports_pmps {
     type: string
     map_layer_name: countries
     sql: ${TABLE}.Country ;;
+  }
+  dimension: product {
+    type: string
+    sql: ${TABLE}.product ;;
+  }
+  dimension: product_name {
+    type: string
+    sql: ${TABLE}.product_name ;;
+  }
+  dimension: category {
+    type: string
+    sql: ${TABLE}.category ;;
   }
   dimension_group: date {
     type: time
@@ -64,6 +77,7 @@ view: reports_pmps {
     group_label: "Measures"
     type: average
     sql: ${TABLE}.vcr ;;
+    value_format: "0.00"
   }
 }
 
