@@ -15,6 +15,18 @@ view: reports_pmps {
     hidden: yes
     sql: ${TABLE}.cid ;;
   }
+  dimension: quantity {
+    hidden: yes
+    sql: ${TABLE}.quantity ;;
+  }
+  dimension: start_date {
+    hidden: yes
+    sql: ${TABLE}.start_date ;;
+  }
+  dimension: end_date {
+    hidden: yes
+    sql: ${TABLE}.end_date ;;
+  }
   dimension: country {
     type: string
     map_layer_name: countries
