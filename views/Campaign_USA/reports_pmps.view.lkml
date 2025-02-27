@@ -1,6 +1,17 @@
 # Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
+
+
+explore: reports_pmps {
+  hidden: yes
+  join: reports_pmps__saleforce {
+    view_label: "Reports Pmps: Saleforce"
+    sql: LEFT JOIN UNNEST(${reports_pmps.saleforce}) as reports_pmps__saleforce ;;
+    relationship: one_to_many
+  }
+}
 view: reports_pmps {
   sql_table_name: `looker_ml.reports_PMPs` ;;
+
 
   dimension: advertiser__advertiser {
     type: string
@@ -10,39 +21,14 @@ view: reports_pmps {
     type: string
     sql: ${TABLE}.Agency__Agency_Name ;;
   }
-
-  dimension: cid {
-    hidden: yes
-    sql: ${TABLE}.cid ;;
-  }
-  dimension: quantity {
-    hidden: yes
-    sql: ${TABLE}.quantity ;;
-  }
-  dimension: start_date {
-    hidden: yes
-    sql: ${TABLE}.start_date ;;
-  }
-  dimension: end_date {
-    hidden: yes
-    sql: ${TABLE}.end_date ;;
+  dimension: category {
+    type: string
+    sql: ${TABLE}.Category ;;
   }
   dimension: country {
     type: string
     map_layer_name: countries
     sql: ${TABLE}.Country ;;
-  }
-  dimension: product {
-    type: string
-    sql: ${TABLE}.product ;;
-  }
-  dimension: product_name {
-    type: string
-    sql: ${TABLE}.product_name ;;
-  }
-  dimension: category {
-    type: string
-    sql: ${TABLE}.category ;;
   }
   dimension_group: date {
     type: time
@@ -53,11 +39,23 @@ view: reports_pmps {
   }
   dimension: deal_id {
     type: string
-    sql: CAST(${TABLE}.dealId AS STRING);;
+    sql: CAST(${TABLE}.dealId AS STRING) ;;
   }
   dimension: deal_name {
     type: string
     sql: ${TABLE}.dealName ;;
+  }
+
+  dimension: product {
+    type: string
+    sql: ${TABLE}.Product ;;
+  }
+  dimension: product_name {
+    type: string
+    sql: ${TABLE}.product_name ;;
+  }
+  dimension: saleforce {
+    sql: ${TABLE}.saleforce ;;
   }
   measure: count {
     type: count
@@ -93,10 +91,33 @@ view: reports_pmps {
   }
 }
 
-view: reports_pmps__cid {
+view: reports_pmps__saleforce {
 
-  dimension: reports_pmps__cid {
+  dimension: cid {
     type: string
-    sql: reports_pmps__cid ;;
+    sql: cid ;;
+  }
+  dimension_group: end {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: End_Date ;;
+  }
+  measure: quantity {
+    group_label: "Measures"
+    type: max
+    sql:quantity ;;
+  }
+  dimension: reports_pmps__saleforce {
+    type: string
+    sql: reports_pmps__saleforce ;;
+  }
+  dimension_group: start {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: Start_Date ;;
   }
 }
