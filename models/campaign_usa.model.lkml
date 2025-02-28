@@ -26,3 +26,12 @@ explore: search_retail_media {}
 explore: final_master_table {}
 
 explore: reports_pmps_sales {}
+
+explore: report_chiper {
+  hidden: yes
+  join: data_chiper {
+    view_label: "Report Chiper: Chiper"
+    sql: LEFT JOIN UNNEST(${report_chiper.chiper}) as report_chiper__chiper ;;
+    relationship: one_to_many
+  }
+}

@@ -1,12 +1,4 @@
-# Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
-explore: report_chiper {
-  hidden: yes
-    join: data_chiper {
-      view_label: "Report Chiper: Chiper"
-      sql: LEFT JOIN UNNEST(${report_chiper.chiper}) as report_chiper__chiper ;;
-      relationship: one_to_many
-    }
-}
+
 
 
 view: report_chiper {
