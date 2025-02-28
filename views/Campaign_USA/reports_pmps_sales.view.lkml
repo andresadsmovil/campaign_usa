@@ -13,6 +13,14 @@ view: reports_pmps_sales {
     type: string
     sql: ${TABLE}.CID ;;
   }
+  dimension: campaign_name {
+    type: string
+    sql: ${TABLE}.campaign_name ;;
+  }
+  dimension: seller {
+    type: string
+    sql: ${TABLE}.vendedor ;;
+  }
   dimension_group: date {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
