@@ -55,8 +55,8 @@ view: reports_pmps_sales {
     datatype: date
     sql: ${TABLE}.Start_Date ;;
   }
-  measure: vcr {
-    group_label: "revenue"
+  measure: revenue {
+    group_label: "Measures"
     type: sum
     sql: ${TABLE}.revenue ;;
     value_format: "$#,##0"
