@@ -24,3 +24,5 @@ explore: total_implementation_platforms {}
 
 explore: search_retail_media {}
 explore: final_master_table {}
+
+explore: reports_pmps_sales {}
