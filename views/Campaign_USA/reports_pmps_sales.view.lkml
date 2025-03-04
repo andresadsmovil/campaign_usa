@@ -52,6 +52,10 @@ view: reports_pmps_sales {
     type: string
     sql: ${TABLE}.product_name ;;
   }
+  dimension: platform {
+    type: string
+    sql: ${TABLE}.platform ;;
+  }
   dimension: quantity {
     type: number
     sql: ${TABLE}.quantity ;;
