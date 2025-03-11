@@ -56,10 +56,6 @@ view: reports_pmps_sales {
     type: string
     sql: ${TABLE}.platform ;;
   }
-  dimension: quantity {
-    type: number
-    sql: ${TABLE}.quantity ;;
-  }
   dimension_group: start {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
@@ -72,6 +68,16 @@ view: reports_pmps_sales {
     type: sum
     sql: ${TABLE}.revenue ;;
     value_format: "$#,##0"
+  }
+  measure: quantity {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.quantity ;;
+  }
+  measure: total_Sale {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.total_Sale ;;
   }
   measure: count {
     type: count
