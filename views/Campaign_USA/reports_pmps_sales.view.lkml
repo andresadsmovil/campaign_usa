@@ -69,16 +69,6 @@ view: reports_pmps_sales {
     sql: ${TABLE}.revenue ;;
     value_format: "$#,##0"
   }
-  measure: quantity {
-    group_label: "Measures"
-    type: sum
-    sql: ${TABLE}.quantity ;;
-  }
-  measure: total_Sale {
-    group_label: "Measures"
-    type: sum
-    sql: ${TABLE}.total_Sale ;;
-  }
   measure: count {
     type: count
     drill_fields: [dealname, product_name]

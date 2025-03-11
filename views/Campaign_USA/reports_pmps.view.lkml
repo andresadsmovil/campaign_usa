@@ -109,6 +109,11 @@ view: reports_pmps__saleforce {
     type: max
     sql:quantity ;;
   }
+  measure: total_sale {
+      group_label: "Measures"
+      type: max
+      sql: ${TABLE}.total_sale ;;
+  }
   dimension: reports_pmps__saleforce {
     type: string
     sql: reports_pmps__saleforce ;;
