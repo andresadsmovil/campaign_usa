@@ -8,7 +8,7 @@ explore: report_chiper {
 }
 
 view: report_chiper {
-  sql_table_name: `adsmovil-reports.looker_ml.report_chiper` ;;
+  sql_table_name: `adsmovil-reports.Adsmovil_Retail_Media.report_chiper` ;;
 
   dimension: campaign_id {
     type: number

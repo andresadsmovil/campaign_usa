@@ -26,3 +26,7 @@ explore: search_retail_media {}
 explore: final_master_table {}
 
 explore: reports_pmps_sales {}
+
+explore: reports_pmps {}
+
+explore: data_chiper {}
