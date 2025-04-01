@@ -73,6 +73,11 @@ view: data_chiper {
     type: sum
     sql: ${TABLE}.quantity ;;
   }
+  measure: count_store {
+    group_label: "Measures"
+    type: count_distinct
+    sql: ${TABLE}.store_id ;;
+  }
   measure: count {
     type: count
   }
