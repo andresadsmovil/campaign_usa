@@ -6,11 +6,11 @@ view: reports_pmps {
 
   dimension: advertiser__advertiser {
     type: string
-    sql: ${TABLE}.Advertiser__Advertiser ;;
+    sql: ${TABLE}.Advertiser ;;
   }
   dimension: agency__agency_name {
     type: string
-    sql: ${TABLE}.Agency__Agency_Name ;;
+    sql: ${TABLE}.Agency ;;
   }
   dimension: category {
     type: string
