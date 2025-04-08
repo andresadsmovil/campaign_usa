@@ -52,6 +52,14 @@ view: reports_pmps {
     type: string
     sql: cid ;;
   }
+  dimension: diff_days {
+    type: number
+    sql:  ${TABLE}.diff_days ;;
+  }
+  dimension: campaign_days {
+    type: number
+    sql:  ${TABLE}.campaign_days ;;
+  }
   dimension_group: end {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
@@ -105,6 +113,43 @@ view: reports_pmps {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.clicks ;;
+  }
+
+  measure: impressions_video_no_rewarded {
+    group_label: "Measures"
+    type: sum
+    sql: CASE WHEN ${category} in ('Video No Rewarded') THEN ${TABLE}.impressions ELSE NULL END  ;;
+  }
+
+  measure: impressions_CTV_video{
+    group_label: "Measures"
+    type: sum
+    sql: CASE WHEN ${category} in ('CTV Video') THEN  ${TABLE}.impressions ELSE NULL END  ;;
+  }
+
+  measure: impressions_display_INT_Rich_Media{
+    group_label: "Measures"
+    type: sum
+    sql: CASE WHEN ${category} in ('Display INT/Rich Media') THEN  ${TABLE}.impressions ELSE NULL END  ;;
+  }
+
+  measure: impressions_display_standard{
+    group_label: "Measures"
+    type: sum
+    sql: CASE WHEN ${category} in ('Display Standard') THEN  ${TABLE}.impressions ELSE NULL END  ;;
+  }
+
+  measure: impressions_Video_Rewardedd{
+    group_label: "Measures"
+    type: sum
+    sql: CASE WHEN ${category} in ('Video Rewarded') THEN  ${TABLE}.impressions ELSE NULL END  ;;
+  }
+
+
+  measure: exchange_rate {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.exchange_rate ;;
   }
   measure: vcr {
     group_label: "Measures"
