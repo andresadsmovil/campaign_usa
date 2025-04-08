@@ -148,7 +148,7 @@ view: reports_pmps {
 
   measure: exchange_rate {
     group_label: "Measures"
-    type: sum
+    type: max
     sql: ${TABLE}.exchange_rate ;;
   }
   measure: vcr {
