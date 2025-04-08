@@ -19,8 +19,6 @@ explore: saleforce_validation_alerts {}
 
 explore: implementation_platforms {}
 
-explore: saleforce_reports_pmps {}
-
 
 explore: total_implementation_platforms {}
 
@@ -35,12 +33,6 @@ explore: reports_pmps_sales {}
 
 
 
-explore: reports_pmps {
-  join: saleforce_reports_pmps {
-    type: inner
-    sql_on: ${reports_pmps.deal_id} = ${saleforce_reports_pmps.deal_id} ;;
-    relationship: many_to_one
-  }
-}
+explore: reports_pmps {}
 
 explore: data_chiper {}
