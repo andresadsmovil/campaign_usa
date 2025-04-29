@@ -1,7 +1,7 @@
 view: reports_pmps_sales {
   sql_table_name: `adsmovil-reports.looker_ml.reports_PMPs_sales` ;;
 
-  dimension: advertiser__advertiser {
+  dimension: Advertiser__Advertiser {
     type: string
     sql: ${TABLE}.Advertiser__Advertiser ;;
   }
