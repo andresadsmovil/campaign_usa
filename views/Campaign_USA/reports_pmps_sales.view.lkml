@@ -3,7 +3,7 @@ view: reports_pmps_sales {
 
   dimension: Advertiser__Advertiser {
     type: string
-    sql: ${TABLE}.Advertiser__Advertiser ;;
+    sql: ${TABLE}.Advertiser ;;
   }
   dimension: agency {
     type: string
