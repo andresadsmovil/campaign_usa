@@ -13,6 +13,12 @@ view: reports_pmps_sales {
     type: string
     sql: ${TABLE}.CID ;;
   }
+  dimension: key {
+    type: string
+    sql: CONCAT(${TABLE}.dealname ,${TABLE}.date) ;;
+    primary_key: yes
+  }
+
   dimension: campaign_name {
     type: string
     sql: ${TABLE}.campaign_name ;;
@@ -29,7 +35,7 @@ view: reports_pmps_sales {
     sql: ${TABLE}.date ;;
   }
   dimension: dealid {
-    type: number
+    type: string
     value_format_name: id
     sql: ${TABLE}.dealid ;;
   }
@@ -55,6 +61,10 @@ view: reports_pmps_sales {
   dimension: platform {
     type: string
     sql: ${TABLE}.platform ;;
+  }
+  dimension: revenue_dim {
+    type: number
+    sql: ${TABLE}.revenue ;;
   }
   dimension_group: start {
     type: time
