@@ -82,6 +82,10 @@ view: onsite_reports {
     type: string
     sql: ${TABLE}.campaignId ;;
   }
+  dimension: campaign_type {
+    type: string
+    sql: ${TABLE}.campaign_type ;;
+  }
   dimension: campaign_name {
     type: string
     sql: ${TABLE}.campaignName ;;
@@ -205,7 +209,7 @@ view: onsite_reports {
   }
   measure: sum_roas {
     group_label: "Measures"
-    type: sum
+    type: average
     sql: ${roas} ;;
   }
   measure: sum_click {
