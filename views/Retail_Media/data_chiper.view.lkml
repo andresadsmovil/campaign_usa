@@ -1,6 +1,10 @@
 view: data_chiper {
   sql_table_name: `adsmovil-reports.Adsmovil_Retail_Media.data_chiper` ;;
 
+  dimension: campaign_id {
+    type: number
+    sql: ${TABLE}.campaign_id ;;
+  }
   dimension: brand {
     type: string
     sql: ${TABLE}.brand ;;
