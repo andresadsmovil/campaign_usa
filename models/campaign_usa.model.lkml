@@ -33,3 +33,4 @@ explore: reports_pmps_sales {}
 explore: reports_pmps {}
 
 explore: data_chiper {}
+explore: report_chiper {}

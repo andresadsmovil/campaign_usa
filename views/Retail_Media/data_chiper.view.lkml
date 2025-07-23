@@ -53,6 +53,10 @@ view: data_chiper {
     type: string
     sql: ${TABLE}.store_address ;;
   }
+  dimension: time {
+    type: string
+    sql: ${TABLE}.time ;;
+  }
   dimension: store_id {
     type: number
     sql: ${TABLE}.store_ID ;;

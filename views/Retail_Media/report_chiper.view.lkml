@@ -1,11 +1,3 @@
-explore: report_chiper {
-  hidden: yes
-  join: report_chiper__chiper {
-    view_label: "Report Chiper: Chiper"
-    sql: LEFT JOIN UNNEST(${report_chiper.chiper}) as report_chiper__chiper ;;
-    relationship: one_to_many
-  }
-}
 
 view: report_chiper {
   sql_table_name: `adsmovil-reports.Adsmovil_Retail_Media.report_chiper` ;;
@@ -22,6 +14,10 @@ view: report_chiper {
     type: string
     map_layer_name: countries
     sql: ${TABLE}.country ;;
+  }
+  dimension: brand {
+    type: string
+    sql: ${TABLE}.brand ;;
   }
   dimension_group: date {
     type: time
@@ -76,7 +72,7 @@ view: report_chiper {
   measure: total_sale {
     group_label: "Measures"
     type: max
-    sql: ${TABLE}.total_sale ;;
+    sql: ${TABLE}.total_sales ;;
     value_format: "$#,##0"
   }
   measure: count_user {
