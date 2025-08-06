@@ -86,6 +86,20 @@ view: data_chiper {
     type: count_distinct
     sql: ${TABLE}.store_id ;;
   }
+  measure: sales_usd_after {
+    group_label: "Measures"
+    type: sum
+    sql: CASE WHEN  ${TABLE}.time = 'After' THEN ${TABLE}.sales_usd ELSE 0 END ;;
+    value_format: "$#,##0"
+  }
+  measure: sales_usd_befor {
+    group_label: "Measures"
+    type: sum
+    sql: CASE WHEN  ${TABLE}.time != 'After' THEN ${TABLE}.sales_usd ELSE 0 END ;;
+    value_format: "$#,##0"
+  }
+
+
   measure: count {
     type: count
   }
