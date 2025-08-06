@@ -92,7 +92,7 @@ view: data_chiper {
     sql: CASE WHEN  ${TABLE}.time = 'After' THEN ${TABLE}.sales_usd ELSE 0 END ;;
     value_format: "$#,##0"
   }
-  measure: sales_usd_befor {
+  measure: sales_usd_before {
     group_label: "Measures"
     type: sum
     sql: CASE WHEN  ${TABLE}.time != 'After' THEN ${TABLE}.sales_usd ELSE 0 END ;;
