@@ -130,10 +130,7 @@ view: onsite_reports {
     sql: ${TABLE}.endDate ;;
    ##  html: <H3 style=" front-size: 20px; text-align: center;">{{value}}</H3>;;
   }
-  dimension: flag {
-    type: yesno
-    sql: CASE WHEN ${TABLE}.endDate >= CURRENT_DATE()  THEN TRUE ELSE FALSE END;;
-  }
+
   dimension: image_url {
     type: string
     sql: ${TABLE}.imageurl;;
@@ -224,6 +221,11 @@ view: onsite_reports {
   measure: count {
     type: count
     drill_fields: [product_name, campaign_name]
+  }
+  measure: flag {
+    group_label: "Measures"
+    type: max
+    sql: CASE WHEN ${TABLE}.endDate >= CURRENT_DATE()  THEN 0 ELSE 1 END;;
   }
 
   measure: dynamic_metric {
