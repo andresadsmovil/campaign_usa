@@ -130,6 +130,10 @@ view: onsite_reports {
     sql: ${TABLE}.endDate ;;
    ##  html: <H3 style=" front-size: 20px; text-align: center;">{{value}}</H3>;;
   }
+  dimension: flag {
+    type: yesno
+    sql: CASE WHEN ${TABLE}.endDate >= CURRENT_DATE()  THEN TRUE ELSE FALSE END;;
+  }
   dimension: image_url {
     type: string
     sql: ${TABLE}.imageurl;;
