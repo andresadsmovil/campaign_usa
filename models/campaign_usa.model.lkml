@@ -34,3 +34,7 @@ explore: reports_pmps {}
 
 explore: data_chiper {}
 explore: report_chiper {}
+
+explore: data_category_turbo {}
+explore: data_granular_turbo {}
+explore: report_retail_media_geo {}
