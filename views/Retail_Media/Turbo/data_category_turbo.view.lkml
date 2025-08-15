@@ -36,6 +36,7 @@ view: data_category_turbo {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.sales ;;
+    value_format: "#,##0"
   }
   measure: count {
     type: count

@@ -27,6 +27,7 @@ view: data_granular_turbo {
   dimension: image {
     type: string
     sql: ${TABLE}.image ;;
+    html: <img src='{{ value }}' width='60' height='60'>;;
   }
   dimension: product {
     type: string
@@ -44,11 +45,24 @@ view: data_granular_turbo {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.sales ;;
+    value_format: "#,##0"
   }
   measure: quantity {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.quantity ;;
+  }
+  measure: sales_before {
+    group_label: "Measures"
+    type: sum
+    sql: CASE WHEN  ${TABLE}.time = 'Before' THEN ${TABLE}.sales ELSE 0 END ;;
+    value_format: "$#,##0"
+  }
+  measure: sales_after {
+    group_label: "Measures"
+    type: sum
+    sql: CASE WHEN  ${TABLE}.time != 'Before' THEN ${TABLE}.sales ELSE 0 END ;;
+    value_format: "$#,##0"
   }
   measure: count {
     type: count
