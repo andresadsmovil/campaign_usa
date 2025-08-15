@@ -64,6 +64,12 @@ view: data_granular_turbo {
     sql: CASE WHEN  ${TABLE}.time != 'Before' THEN ${TABLE}.sales ELSE 0 END ;;
     value_format: "$#,##0"
   }
+  measure: avg_sales {
+    group_label: "Measures"
+    type: average
+    sql: ${TABLE}.sales ;;
+    value_format: "#,##0"
+  }
   measure: count {
     type: count
   }

@@ -70,6 +70,11 @@ view: report_retail_media_geo {
     type: max
     sql: ${TABLE}.total_sales ;;
   }
+  measure: ads_spend {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.ads_spend ;;
+  }
   measure: qty_user {
     group_label: "Measures"
     type: count_distinct
