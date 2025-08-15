@@ -74,6 +74,7 @@ view: report_retail_media_geo {
     group_label: "Measures"
     type: sum
     sql: ${TABLE}.ads_spend ;;
+    value_format: "$#,##0"
   }
   measure: qty_user {
     group_label: "Measures"
