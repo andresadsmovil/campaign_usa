@@ -20,4 +20,5 @@ view: report_retail_media_geo_delta {
   measure: count {
     type: count
   }
+
 }
