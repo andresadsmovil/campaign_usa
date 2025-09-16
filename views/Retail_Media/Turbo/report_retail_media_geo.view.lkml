@@ -9,6 +9,10 @@ view: report_retail_media_geo {
     type: number
     sql: ${TABLE}.campaign_id ;;
   }
+  dimension: advertiser_internal_id {
+    type: string
+    sql: ${TABLE}.advertiser_internal_id ;;
+  }
   dimension: campaign_type {
     type: string
     sql: ${TABLE}.campaign_type ;;
