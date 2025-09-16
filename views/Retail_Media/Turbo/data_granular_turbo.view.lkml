@@ -9,6 +9,10 @@ view: data_granular_turbo {
     type: number
     sql: ${TABLE}.campaign_id ;;
   }
+  dimension: advertiser_internal_id {
+    type: string
+    sql: ${TABLE}.advertiser_internal_id ;;
+  }
   dimension: country {
     type: string
     map_layer_name: countries

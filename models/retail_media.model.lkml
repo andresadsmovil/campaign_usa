@@ -17,6 +17,3 @@ explore: onsite_reports {
     user_attribute: advertiser
   }
 }
-
-
-explore: data_category_turbo {}
