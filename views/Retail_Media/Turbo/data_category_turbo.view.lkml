@@ -42,6 +42,26 @@ view: data_category_turbo {
     sql: ${TABLE}.sales ;;
     value_format: "#,##0"
   }
+  measure: share {
+    group_label: "Measures"
+    type: average
+    sql: ${TABLE}.share ;;
+  }
+  measure: new {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.new ;;
+  }
+  measure: Frequent {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.Frequent ;;
+  }
+  measure: Orders {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.Orders ;;
+  }
   measure: count {
     type: count
   }
