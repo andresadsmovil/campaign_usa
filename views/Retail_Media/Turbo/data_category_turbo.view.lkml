@@ -46,11 +46,12 @@ view: data_category_turbo {
     group_label: "Measures"
     type: average
     sql: ${TABLE}.share ;;
+    value_format_name: "percent_2"
   }
   measure: new {
     group_label: "Measures"
     type: sum
-    sql: ${TABLE}.new ;;
+    sql: ${TABLE}.news ;;
   }
   measure: Frequent {
     group_label: "Measures"
