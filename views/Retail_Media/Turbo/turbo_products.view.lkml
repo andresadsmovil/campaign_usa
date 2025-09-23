@@ -1,5 +1,5 @@
 view: turbo_products {
-  sql_table_name: `adsmovil-reports.looker_ml.turbo_products` ;;
+  sql_table_name: `adsmovil-retailmedia-storage.Rappi_turbo.turbo_products` ;;
 
   dimension: country {
     type: string
@@ -44,7 +44,6 @@ view: turbo_products {
   dimension: url_images {
     type: string
     sql: ${TABLE}.url_images ;;
-    html: <img src='{{ value }}' width='60' height='60'>;;
   }
   measure: count {
     type: count
