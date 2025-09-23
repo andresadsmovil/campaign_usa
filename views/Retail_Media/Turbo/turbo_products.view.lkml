@@ -1,5 +1,5 @@
 view: turbo_products {
-  sql_table_name: `adsmovil-retailmedia-storage.Rappi_turbo.turbo_products` ;;
+  sql_table_name: `adsmovil-reports.looker_ml.turbo_products` ;;
 
   dimension: country {
     type: string
@@ -14,7 +14,7 @@ view: turbo_products {
     sql: ${TABLE}.date ;;
   }
   dimension: ean {
-    type: number
+    type: string
     sql: ${TABLE}.ean ;;
   }
   dimension: lat {
