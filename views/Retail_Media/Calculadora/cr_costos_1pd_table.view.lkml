@@ -46,7 +46,7 @@ view: cr_costos_1pd_table {
   }
   dimension: retailer {
     type: string
-    sql: ${TABLE}.retailer ;;
+    sql: ${TABLE}.retialer ;;
   }
   dimension: logo {
     type: string
