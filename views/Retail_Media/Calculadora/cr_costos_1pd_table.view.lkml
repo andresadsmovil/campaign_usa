@@ -40,6 +40,19 @@ view: cr_costos_1pd_table {
     type: string
     sql: ${TABLE}.segment_name ;;
   }
+  dimension: country {
+    type: string
+    sql: ${TABLE}.country ;;
+  }
+  dimension: retailer {
+    type: string
+    sql: ${TABLE}.retailer ;;
+  }
+  dimension: logo {
+    type: string
+    sql: ${TABLE}.logo ;;
+    html: <img src='{{ value }}' width='60' height='60'>;;
+  }
   measure: count {
     type: count
     drill_fields: [segment_name, campaign_name]
