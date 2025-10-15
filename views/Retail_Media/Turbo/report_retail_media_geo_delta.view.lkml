@@ -18,7 +18,7 @@ view: report_retail_media_geo_delta {
     sql: ${TABLE}.campaign_id ;;
   }
   dimension: advertiser_internal_id {
-    type: string
+    type: number
     sql: ${TABLE}.advertiser_internal_id ;;
   }
   measure: count {

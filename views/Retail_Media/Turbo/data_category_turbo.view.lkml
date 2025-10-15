@@ -10,7 +10,7 @@ view: data_category_turbo {
     sql: ${TABLE}.campaign_id ;;
   }
   dimension: advertiser_internal_id {
-    type: string
+    type: number
     sql: ${TABLE}.advertiser_internal_id ;;
   }
   dimension: category {
