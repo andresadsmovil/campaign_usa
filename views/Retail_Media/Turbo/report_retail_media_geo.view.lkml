@@ -85,6 +85,12 @@ view: report_retail_media_geo {
     type: count_distinct
     sql: ${TABLE}.user_id ;;
   }
+  measure: negotiated_price {
+    group_label: "Measures"
+    type: max
+    sql: ${TABLE}.Negotiated_Price ;;
+    value_format: "$#,##0"
+  }
   measure: count {
     type: count
   }
