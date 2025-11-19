@@ -599,4 +599,49 @@ view: implementation_platforms {
     type: sum
     sql: ${total_sale} ;;
   }
+  measure: impressions_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.impressions_publica ;;
+  }
+  measure: clicks_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.clicks_publica ;;
+  }
+  measure: video_plays_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.video_plays_publica ;;
+  }
+  measure: video_q1s_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.video_q1s_publica ;;
+  }
+  measure: video_midpoints_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.video_midpoints_publica ;;
+  }
+  measure: video_q3_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.video_q3_publica ;;
+  }
+  measure: video_completes_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.video_completes_publica ;;
+  }
+  measure: average_CPM_publica {
+    group_label: "Measures"
+    type: max
+    sql:  ${TABLE}.average_CPM_publica ;;
+  }
+  measure: total_cost_publica {
+    group_label: "Measures"
+    type: max
+    sql:  ${TABLE}.total_cost_publica ;;
+  }
 }

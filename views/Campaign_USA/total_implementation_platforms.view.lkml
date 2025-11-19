@@ -336,6 +336,10 @@ view: total_implementation_platforms {
     type: string
     sql: ${TABLE}.flag_ad_manager ;;
   }
+  dimension: flag_publica {
+    type: string
+    sql: ${TABLE}.flag_publica ;;
+  }
   dimension: flag_lqdm {
     type: string
     sql: ${TABLE}.flag_lqdm ;;
@@ -364,6 +368,12 @@ view: total_implementation_platforms {
     group_label: "Measures"
     type: max
     sql: ${entrega_bw} ;;
+    value_format: "#,##0"
+  }
+  measure: sum_entrega_publica {
+    group_label: "Measures"
+    type: max
+    sql: ${TABLE}.entrega_publica ;;
     value_format: "#,##0"
   }
   measure: sum_average_cpm_ad_manager {
@@ -641,5 +651,50 @@ view: total_implementation_platforms {
     group_label: "Measures"
     type: sum
     sql: ${negotiated_price} ;;
+  }
+  measure: impressions_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.impressions_publica ;;
+  }
+  measure: clicks_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.clicks_publica ;;
+  }
+  measure: video_plays_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.video_plays_publica ;;
+  }
+  measure: video_q1s_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.video_first_quartile_publica ;;
+  }
+  measure: video_midpoint_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.video_midpoint_publica ;;
+  }
+  measure: video_q3_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.video_third_quartile_publica ;;
+  }
+  measure: video_completes_publica {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.video_completes_publica ;;
+  }
+  measure: average_CPM_publica {
+    group_label: "Measures"
+    type: max
+    sql:  ${TABLE}.average_CPM_publica ;;
+  }
+  measure: total_cost_publica {
+    group_label: "Measures"
+    type: max
+    sql:  ${TABLE}.total_cost_publica ;;
   }
 }
