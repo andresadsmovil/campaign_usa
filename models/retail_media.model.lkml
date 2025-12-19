@@ -10,8 +10,13 @@ datagroup: retail_media_default_datagroup {
 
 persist_with: retail_media_default_datagroup
 
-explore:  onsite_reports_banner_products {}
+explore:  onsite_reports_banner_products {
+  persist_with: retail_media_default_datagroup
+}
+
+
 explore: onsite_reports {
+  persist_with: retail_media_default_datagroup
   access_filter: {
     field:provider
     user_attribute: advertiser
