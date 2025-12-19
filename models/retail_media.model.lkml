@@ -8,7 +8,6 @@ datagroup: retail_media_default_datagroup {
   max_cache_age: "1 hour"
 }
 
-persist_with: retail_media_default_datagroup
 
 explore:  onsite_reports_banner_products {
   persist_with: retail_media_default_datagroup
