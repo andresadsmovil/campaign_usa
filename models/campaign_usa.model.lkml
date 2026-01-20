@@ -19,6 +19,7 @@ explore: saleforce_validation_alerts {}
 
 explore: implementation_platforms {}
 
+explore: implementation_platforms_validators {}
 
 explore: total_implementation_platforms {}
 

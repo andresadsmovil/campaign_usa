@@ -27,31 +27,31 @@ view: implementation_platforms_validators {
   measure: impressions_bw {
     group_label: "Measures"
     type: sum
-    sql: ${TABLE}.${impressions_bw} ;;
+    sql: ${TABLE}.impressions_bw ;;
   }
   measure: impressions_dcm {
     group_label: "Measures"
     type: sum
-    sql: ${TABLE}.${impressions_dcm} ;;
+    sql: ${TABLE}.impressions_dcm ;;
   }
   measure: impressions_dv360 {
     group_label: "Measures"
     type: sum
-    sql: ${TABLE}.${impressions_dv360} ;;
+    sql: ${TABLE}.impressions_dv360 ;;
   }
   measure: impressions_ad_manager {
     group_label: "Measures"
     type: sum
-    sql: ${TABLE}.${impressions_ad_manager} ;;
+    sql: ${TABLE}.impressions_ad_manager ;;
   }
   measure: impressions_total {
     group_label: "Measures"
     type: sum
-    sql: ${TABLE}.${impressions_total} ;;
+    sql: ${TABLE}.impressions_total ;;
   }
   measure: discrepancia {
     group_label: "Measures"
-    type: sum
-    sql: ${TABLE}.${discrepancia} ;;
+    type: average
+    sql: ${TABLE}.discrepancia ;;
   }
 }
