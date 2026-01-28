@@ -44,6 +44,11 @@ view: implementation_platforms_validators {
     type: sum
     sql: ${TABLE}.impressions_ad_manager ;;
   }
+  measure: impressions_simplifi {
+    group_label: "Measures"
+    type: sum
+    sql: ${TABLE}.impressions_simplifi ;;
+  }
   measure: impressions_total {
     group_label: "Measures"
     type: sum
