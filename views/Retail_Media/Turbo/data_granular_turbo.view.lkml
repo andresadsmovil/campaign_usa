@@ -35,7 +35,7 @@ view: data_granular_turbo {
   }
   dimension: product {
     type: string
-    sql: ${TABLE}.product ;;
+    sql: LOWER(${TABLE}.product) ;;
   }
   dimension: time {
     type: string
