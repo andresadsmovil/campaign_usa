@@ -20,6 +20,10 @@ view: implementation_platforms_validators {
     type: string
     sql: ${TABLE}.N__mero_de_Orden ;;
   }
+  dimension: placement {
+    type: string
+    sql: ${TABLE}.placement ;;
+  }
   measure: count {
     type: count
     drill_fields: [campaign_name]
