@@ -24,6 +24,10 @@ view: implementation_platforms_validators {
     type: string
     sql: ${TABLE}.placement ;;
   }
+  dimension: platform {
+    type: string
+    sql: ${TABLE}.platform ;;
+  }
   measure: count {
     type: count
     drill_fields: [campaign_name]
