@@ -591,7 +591,7 @@ view: implementation_platforms {
   }
   measure: sum_negotiated_price {
     group_label: "Measures"
-    type: sum
+    type: max
     sql: ${negotiated_price} ;;
   }
   measure: sum_total_sale {
